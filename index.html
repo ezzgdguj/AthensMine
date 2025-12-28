@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AthensMine | Minecraft Сервер</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка сервера -->
+        <header class="server-header">
+            <div class="server-status">
+                <span class="status-indicator online"></span>
+                <span class="status-text">Онлайн: <strong id="onlineCount">Неизвестно</strong>/1000</span>
+            </div>
+            <div class="server-ip">
+                <i class="fas fa-server"></i>
+                <code id="serverIp">athensmine.gomc.fun</code>
+                <button class="copy-btn" onclick="copyServerIP()">
+                    <i class="far fa-copy"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Основной блок -->
+        <main class="main-content">
+            <!-- Заголовок и описание -->
+            <section class="hero-section">
+                <div class="logo-container">
+                    <h1 class="server-title">
+                        <span class="title-part">ATHENS</span>
+                        <span class="title-accent">MINE</span>
+                    </h1>
+                    <div class="version-tag">v1.16.5-1.21.4</div>
+                </div>
+                
+                <div class="hero-description">
+                    <h2>Бокс пвп, который точно тебя удивит!</h2>
+                    <p>Приветствуем на официальном сайте сервера AthensMine! Уникальный геймплей, регулярные ивенты и дружное комьюнити ждут тебя.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Привилегий</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">900+</div>
+                            <div class="stat-label">Игроков</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2024</div>
+                            <div class="stat-label">Создан</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+<!-- Навигация -->
+<nav class="categories-nav">
+    <button class="category-btn active" data-category="privileges">
+        <i class="fas fa-crown"></i>
+        <span>Привилегии</span>
+    </button>
+    <button class="category-btn" data-category="cases">
+        <i class="fas fa-gift"></i>
+        <span>Кейсы</span>
+    </button>
+    <button class="category-btn" data-category="currency">
+        <i class="fas fa-coins"></i>
+        <span>Другое</span>
+    </button>
+</nav>
+
+<!-- Секция с товарами (динамически меняется) -->
+<section class="products-section">
+    <div class="section-header">
+        <h3><i class="fas fa-crown section-category-icon"></i> ДОСТУПНЫЕ ПРИВИЛЕГИИ</h3>
+        <div class="section-subtitle">Выберите уровень доступа к командам на сервере</div>
+    </div>
+
+    <!-- Привилегии (по умолчанию) -->
+    <div class="category-content" id="privileges-content">
+        <!-- Сетка товаров (ваши 7 привилегий) -->
+        <div class="products-grid">
+            <!-- GENESIS -->
+            <div class="product-card">
+                <div class="product-badge">СТАРТ</div>
+                <div class="product-header">
+                    <h4 class="product-title">GENESIS</h4>
+                    <div class="product-price">
+                        <span class="price-amount">69 ₽</span>
+                        <span class="price-period">навсегда</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <i class="fas fa-rocket"></i>
+                    <span>Базовый набор команд для комфортной игры</span>
+                </div>
+                <ul class="product-features">
+                    <li><i class="fas fa-check"></i> <code>/kit</code> - свой собственный набор</li>
+                    <li><i class="fas fa-check"></i> <code>/ec</code> - открыть эндер-сундук</li>
+                    <li><i class="fas fa-check"></i> <code>/ext</code> - потушить себя</li>
+                    <li><i class="fas fa-check"></i> <code>/feed</code> - восстановить голод</li>
+                </ul>
+                <button class="buy-btn" data-product="GENESIS" data-price="69">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Купить</span>
+                </button>
+            </div>
+
+            <!-- CHIMERA -->
+            <div class="product-card">
+                <div class="product-badge">ВЫГОДА</div>
+                <div class="product-header">
+                    <h4 class="product-title">CHIMERA</h4>
+                    <div class="product-price">
+                        <span class="price-amount">149 ₽</span>
+                        <span class="price-period">навсегда</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Genesis + полезные функции</span>
+                </div>
+                <ul class="product-features">
+                    <li><i class="fas fa-check"></i> Все команды <strong>GENESIS</strong></li>
+                    <li><i class="fas fa-check"></i> <code>/heal</code> - захилить себя</li>
+                    <li><i class="fas fa-check"></i> Улучшенный набор в <code>/kit</code></li>
+                </ul>
+                <button class="buy-btn" data-product="CHIMERA" data-price="149">
+                    <i class="fas fa-bolt"></i>
+                    <span>Выбрать</span>
+                </button>
+            </div>
+
+            <!-- ODYSSEY -->
+            <div class="product-card featured">
+                <div class="product-badge">ПОПУЛЯРНЫЙ</div>
+                <div class="product-header">
+                    <h4 class="product-title">ODYSSEY</h4>
+                    <div class="product-price">
+                        <span class="price-amount">299 ₽</span>
+                        <span class="price-period">навсегда</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <i class="fas fa-compass"></i>
+                    <span>Идеальный баланс цены и возможностей</span>
+                </div>
+                <ul class="product-features">
+                    <li><i class="fas fa-check"></i> Все команды <strong>CHIMERA</strong></li>
+                    <li><i class="fas fa-check"></i> <code>/dispose</code> - мусорка</li>
+                    <li><i class="fas fa-check"></i> Улучшенный набор в /kit</li>
+                </ul>
+                <button class="buy-btn" data-product="ODYSSEY" data-price="299">
+                    <i class="fas fa-star"></i>
+                    <span>Рекомендуем</span>
+                </button>
+            </div>
+
+            <!-- LEVIATHAN -->
+            <div class="product-card">
+                <div class="product-badge">ПРОФИ</div>
+                <div class="product-header">
+                    <h4 class="product-title">LEVIATHAN</h4>
+                    <div class="product-price">
+                        <span class="price-amount">449 ₽</span>
+                        <span class="price-period">навсегда</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <i class="fas fa-dragon"></i>
+                    <span>Для активных игроков сервера</span>
+                </div>
+                <ul class="product-features">
+                    <li><i class="fas fa-check"></i> Все команды <strong>ODYSSEY</strong></li>
+                    <li><i class="fas fa-check"></i> <code>/clear</code> - очистить инвентарь</li>
+                    <li><i class="fas fa-check"></i> <code>/list</code> - узнать онлайн на сервере</li>
+                    <li><i class="fas fa-check"></i> <strong>Больше ресурсов в /kit</strong></li>
+                </ul>
+                <button class="buy-btn" data-product="LEVIATHAN" data-price="449">
+                    <i class="fas fa-fire"></i>
+                    <span>Для профи</span>
+                </button>
+            </div>
+
+            <!-- VALKYRIE -->
+            <div class="product-card">
+                <div class="product-badge">ПРЕМИУМ</div>
+                <div class="product-header">
+                    <h4 class="product-title">VALKYRIE</h4>
+                    <div class="product-price">
+                        <span class="price-amount">699 ₽</span>
+                        <span class="price-period">навсегда</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <i class="fas fa-angel"></i>
+                    <span>Премиум доступ с кастомизацией</span>
+                </div>
+                <ul class="product-features">
+                    <li><i class="fas fa-check"></i> Все команды <strong>LEVIATHAN</strong></li>
+                    <li><i class="fas fa-check"></i> <code>/nick</code> - изменить никнейм</li>
+                    <li><i class="fas fa-check"></i> /hat - одеть предмет на голову</li>
+                    <li><i class="fas fa-check"></i> <strong>Больше ресурсов в /kit</strong></li>
+
+                </ul>
+                <button class="buy-btn" data-product="VALKYRIE" data-price="699">
+                    <i class="fas fa-gem"></i>
+                    <span>Премиум</span>
+                </button>
+            </div>
+
+            <!-- CERBERUS -->
+            <div class="product-card">
+                <div class="product-badge">VIP</div>
+                <div class="product-header">
+                    <h4 class="product-title">CERBERUS</h4>
+                    <div class="product-price">
+                        <span class="price-amount">949 ₽</span>
+                        <span class="price-period">навсегда</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <i class="fas fa-dog"></i>
+                    <span>Элитный доступ к админ-командам</span>
+                </div>
+                <ul class="product-features">
+                    <li><i class="fas fa-check"></i> Все команды <strong>VALKYRIE</strong></li>
+                    <li><i class="fas fa-check"></i> <code>/invsee</code> - посмотреть инвентарь игрока</li>
+                    <li><i class="fas fa-check"></i> <strong>Больше ресурсов в /kit</strong></li>
+                </ul>
+                <button class="buy-btn" data-product="CERBERUS" data-price="949">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Элитный</span>
+                </button>
+            </div>
+
+            <!-- CUSTOM -->
+            <div class="product-card highlight">
+                <div class="product-badge custom-badge">
+                    <i class="fas fa-star"></i>
+                    КАСТОМНЫЙ
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="product-header">
+                    <h4 class="product-title">CUSTOM</h4>
+                    <div class="product-price">
+                        <span class="price-amount">1 349 ₽</span>
+                        <span class="price-period">навсегда</span>
+                    </div>
+                </div>
+                <div class="product-description custom-description">
+                    <i class="fas fa-palette"></i>
+                    <span>Полная кастомизация под вас</span>
+                </div>
+                <ul class="product-features">
+                    <li><i class="fas fa-check"></i> Все команды <strong>CERBERUS</strong></li>
+                    <li><i class="fas fa-check"></i> <code>/fly</code> - режим полета</li>
+                    <li><i class="fas fa-check"></i> <code>/bc</code> - сделать объявление</li>
+                    <li class="custom-feature">
+                        <i class="fas fa-crown"></i>
+                        <span><strong>СВОЙ КАСТОМНЫЙ ДОНАТ</strong></span>
+                    </li>
+                    <li class="custom-feature">
+                        <i class="fas fa-crown"></i>
+                        <span><strong>СВОЙ КАСТОМНЫЙ КИТ</strong></span>
+                    </li>
+                    <li class="custom-feature">
+                        <i class="fas fa-crown"></i>
+                        <span><strong>СВОЙ ЭКСКЛЮЗИВНЫЙ ТИТУЛ</strong></span>
+                    </li>
+                    <li><i class="fas fa-check"></i> Связь с администрацией</li>
+                    <li><i class="fas fa-check"></i> Приоритетная поддержка</li>
+                </ul>
+                <button class="buy-btn custom-btn" data-product="CUSTOM" data-price="1349">
+                    <i class="fas fa-magic"></i>
+                    <span>КАСТОМИЗИРОВАТЬ</span>
+                </button>
+            </div>
+
+            <!-- SANTA -->
+            <div class="product-card">
+                <div class="product-badge">ИВЕНТОВЫЙ</div>
+                <div class="product-header">
+                    <h4 class="product-title">SANTA</h4>
+                    <div class="product-price">
+                        <span class="price-amount">1 749 ₽</span>
+                        <span class="price-period">навсегда</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <i class="fas fa-sleigh"></i>
+                    <span>Новогодние преимущества</span>
+                </div>
+                <ul class="product-features">
+                    <li><i class="fas fa-check"></i> Все команды <strong>CUSTOM</strong></li>
+                    <li><i class="fas fa-check"></i> <code>/kit plus</code> - 2-ой набор со сверой</li>
+                    <li><i class="fas fa-check"></i> <strong>Титул "NewYear 2026"</strong></li>
+                    <li><i class="fas fa-check"></i> <strong>Роль Santa в дискорде</strong></li>
+                    <li><i class="fas fa-check"></i> <strong>1 кит кейс в подарок</strong></li>
+                    <li><i class="fas fa-check"></i> <strong>100 фантиков</strong></li>
+                </ul>
+                <button class="buy-btn" data-product="SANTA" data-price="1749">
+                    <i class="fas fa-candy-cane"></i>
+                    <span>ПРИЗВАТЬ САНТУ</span>
+                </button>
+            </div>
+
+            <!-- GRINCH -->
+            <div class="product-card">
+                <div class="product-badge">ИВЕНТОВЫЙ</div>
+                <div class="product-header">
+                    <h4 class="product-title">GRINCH</h4>
+                    <div class="product-price">
+                        <span class="price-amount">1 749 ₽</span>
+                        <span class="price-period">навсегда</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <i class="fas fa-tree"></i>
+                    <span>Настоящая привилегия хищника</span>
+                </div>
+                <ul class="product-features">
+                    <li><i class="fas fa-check"></i> Все команды <strong>CUSTOM</strong></li>
+                    <li><i class="fas fa-check"></i> <code>/kit plus</code> - 2-ой набор со сверой</li>
+                    <li><i class="fas fa-check"></i> <strong>Титул "Пожиратель"</strong></li>
+                    <li><i class="fas fa-check"></i> <strong>Роль Grinch в дискорде</strong></li>
+                    <li><i class="fas fa-check"></i> <strong>1 кит кейс в подарок</strong></li>
+                    <li><i class="fas fa-check"></i> <strong>100 фантиков</strong></li>
+                </ul>
+                <button class="buy-btn" data-product="GRINCH" data-price="1749">
+                    <i class="fas fa-snowman"></i>
+                    <span>ЗАЖЕЧЬ ЁЛКУ</span>
+                </button>
+            </div>
+
+            <!-- CHRISTMAS -->
+            <div class="product-card">
+                <div class="product-badge">ИВЕНТОВЫЙ</div>
+                <div class="product-header">
+                    <h4 class="product-title">CHRISTMAS</h4>
+                    <div class="product-price">
+                        <span class="price-amount">2 026 ₽</span>
+                        <span class="price-period">навсегда</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <i class="fas fa-snowflake"></i>
+                    <span>Холодный контроль над сервером</span>
+                </div>
+                <ul class="product-features">
+                    <li><i class="fas fa-check"></i> Все команды <strong>GRINCH/SANTA</strong></li>
+                    <li><i class="fas fa-check"></i> <code>/kit plus</code>- 2-ой набор с тройной сверой</li>
+                    <li><i class="fas fa-check"></i> <strong>Титул "Обмороженный"</strong></li>
+                    <li><i class="fas fa-check"></i> <strong>Роль Christmas в дискорде</strong></li>
+                    <li><i class="fas fa-check"></i> <strong>2 кит кейса в подарок</strong></li>
+                    <li><i class="fas fa-check"></i> <strong>149 фантиков</strong></li>
+                </ul>
+                <button class="buy-btn" data-product="CHRISTMAS" data-price="2026">
+                    <i class="fas fa-bell"></i>
+                    <span>АКТИВИРОВАТЬ ЗИМУ</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Кейсы (скрыто по умолчанию) -->
+    <div class="category-content" id="cases-content" style="display: none;">
+        <div class="products-grid">
+            <!-- Кейс 1 -->
+            <div class="product-card">
+                <div class="product-badge">ПРЕИМУЩЕСТВО</div>
+                <div class="product-header">
+                    <h4 class="product-title">КИТ КЕЙС</h4>
+                    <div class="product-price">
+                        <span class="price-amount">69 ₽</span>
+                        <span class="price-period">1 шт</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <i class="fas fa-box-open"></i>
+                    <span>Шанс получить любой кит!</span>
+                </div>
+                <ul class="product-features">
+                    <li><i class="fas fa-dice"></i> <strong>4 локация</strong> - 25%</li>
+                    <li><i class="fas fa-dice"></i> <strong>5 локация</strong> - 20%</li>
+                    <li><i class="fas fa-dice"></i> <strong>6 локация</strong> - 15%</li>
+                    <li><i class="fas fa-dice"></i> <strong>7 локация</strong> - 10%</li>
+                    <li><i class="fas fa-dice"></i> <strong>8 локация</strong> - 7%</li>
+                    <li><i class="fas fa-dice"></i> <strong>9 локация</strong> - 5%</li>
+                    <li><i class="fas fa-dice"></i> <strong>10 локация</strong> - 3%</li>
+                </ul>
+                <button class="buy-btn" data-product="CASE_START" data-price="49">
+                    <i class="fas fa-gift"></i>
+                    <span>Открыть кейс</span>
+                </button>
+            </div>
+
+            <!-- Кейс 2 -->
+            <div class="product-card featured">
+                <div class="product-badge">ХИТ</div>
+                <div class="product-header">
+                    <h4 class="product-title">ДОНАТ КЕЙС</h4>
+                    <div class="product-price">
+                        <span class="price-amount">79 ₽</span>
+                        <span class="price-period">1 шт</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <i class="fas fa-gem"></i>
+                    <span>Шанс получить любой донат на 30 дней!</span>
+                </div>
+                <ul class="product-features">
+                    <li><i class="fas fa-dice"></i> <strong>GENESIS</strong> - 30%</li>
+                    <li><i class="fas fa-dice"></i> <strong>CHIMERA</strong> - 25%</li>
+                    <li><i class="fas fa-dice"></i> <strong>ODYSSEY</strong> - 20%</li>
+                    <li><i class="fas fa-dice"></i> <strong>LEVIATHAN</strong> - 15%</li>
+                    <li><i class="fas fa-dice"></i> <strong>VALKYRIE</strong> - 12%</li>
+                    <li><i class="fas fa-dice"></i> <strong>CERBERUS</strong> - 7%</li>
+                </ul>
+                <button class="buy-btn" data-product="CASE_PREMIUM" data-price="149">
+                    <i class="fas fa-gift"></i>
+                    <span>Открыть кейс</span>
+                </button>
+            </div>
+
+            <!-- Кейс 3 -->
+            <div class="product-card">
+                <div class="product-badge">ПРОФИТ</div>
+                <div class="product-header">
+                    <h4 class="product-title">ПРОФИТ КЕЙС</h4>
+                    <div class="product-price">
+                        <span class="price-amount">89 ₽</span>
+                        <span class="price-period">1 шт</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <i class="fas fa-crown"></i>
+                    <span>Шанс выбить гору фантиков!</span>
+                </div>
+                <ul class="product-features">
+                    <li><i class="fas fa-dice"></i> <strong>35 фантиков</strong> - 30%</li>
+                    <li><i class="fas fa-dice"></i> <strong>45 фантиков</strong> - 25%</li>
+                    <li><i class="fas fa-dice"></i> <strong>55 фантиков</strong> - 22%</li>
+                    <li><i class="fas fa-dice"></i> <strong>75 фантиков</strong> - 20%</li>
+                    <li><i class="fas fa-dice"></i> <strong>99 фантиков</strong> - 15%</li>
+                    <li><i class="fas fa-dice"></i> <strong>119 фантиков</strong> - 12%</li>
+                    <li><i class="fas fa-dice"></i> <strong>129 фантиков</strong> - 10%</li>
+                </ul>
+                <button class="buy-btn" data-product="CASE_LEGENDARY" data-price="349">
+                    <i class="fas fa-gift"></i>
+                    <span>Открыть кейс</span>
+                </button>
+            </div>
+
+            <!-- Кейс 4 -->
+            <div class="product-card">
+                <div class="product-badge">???</div>
+                <div class="product-header">
+                    <h4 class="product-title">СКОРО</h4>
+                    <div class="product-price">
+                        <span class="price-amount">0 ₽</span>
+                        <span class="price-period">0 шт</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <i class="fas fa-boxes"></i>
+                    <span>...</span>
+                </div>
+                <ul class="product-features">
+                    <li><i class="fas fa-check"></i> ?</li>
+                </ul>
+                <button class="buy-btn" data-product="CASE_PACK_5" data-price="599">
+                    <i class="fas fa-boxes"></i>
+                    <span>???</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Валюта (скрыто по умолчанию) -->
+    <div class="category-content" id="currency-content" style="display: none;">
+        <div class="products-grid">
+            <!-- Валюта 1 -->
+            <div class="product-card">
+                <div class="product-badge">ВАЛЮТА</div>
+                <div class="product-header">
+                    <h4 class="product-title">Фантики</h4>
+                    <div class="product-price">
+                        <span class="price-amount">1 ₽</span>
+                        <span class="price-period">1 шт</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <i class="fas fa-coins"></i>
+                    <span>Для покупки донатных предметов на сервере</span>
+                </div>
+                <ul class="product-features">
+                    <li><i class="fas fa-check"></i> Мгновенное зачисление</li>
+                    <li><i class="fas fa-check"></i> Можно купить ∞ штук</li>
+                </ul>
+                <button class="buy-btn" data-product="CURRENCY_10K" data-price="29">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Купить валюту</span>
+                </button>
+            </div>
+
+            <!-- Валюта 2 -->
+            <div class="product-card featured">
+                <div class="product-badge">ВЫГОДА</div>
+                <div class="product-header">
+                    <h4 class="product-title">Разбан</h4>
+                    <div class="product-price">
+                        <span class="price-amount">129 ₽</span>
+                        <span class="price-period">на сервер</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <i class="fas fa-piggy-bank"></i>
+                    <span>Вернитесь в игру без ограничений!</span>
+                </div>
+                <ul class="product-features">
+                    <li><i class="fas fa-check"></i> Мгновенное зачисление</li>
+                    <li><i class="fas fa-check"></i> Экономия времени</li>
+                </ul>
+                <button class="buy-btn" data-product="CURRENCY_50K" data-price="129">
+                    <i class="fas fa-coins"></i>
+                    <span>Купить выгодно</span>
+                </button>
+            </div>
+
+            <!-- Валюта 3 -->
+            <div class="product-card">
+                <div class="product-badge">ПОЛЬЗА</div>
+                <div class="product-header">
+                    <h4 class="product-title">Размут</h4>
+                    <div class="product-price">
+                        <span class="price-amount">39 ₽</span>
+                        <span class="price-period">на сервер</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>Снимите блокировку и наслаждайтесь игрой снова!</span>
+                </div>
+                <ul class="product-features">
+                    <li><i class="fas fa-check"></i> Мгновенное зачисление</li>
+                    <li><i class="fas fa-check"></i> Экономия времени</li>
+                </ul>
+                <button class="buy-btn" data-product="CURRENCY_200K" data-price="399">
+                    <i class="fas fa-gem"></i>
+                    <span>Купить</span>
+                </button>
+            </div>
+
+                        <!-- Валюта 4 -->
+            <div class="product-card">
+                <div class="product-badge">КАСТОМ</div>
+                <div class="product-header">
+                    <h4 class="product-title">Кастом Титул</h4>
+                    <div class="product-price">
+                        <span class="price-amount">149 ₽</span>
+                        <span class="price-period">навсегда</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <i class="fas fa-palette"></i>
+                    <span>Кастомизация без ограничений!</span>
+                </div>
+                <ul class="product-features">
+                    <li><i class="fas fa-check"></i> Мгновенное зачисление</li>
+                </ul>
+                <button class="buy-btn" data-product="CURRENCY_200K" data-price="399">
+                    <i class="fas fa-bolt"></i>
+                    <span>Кастомизируй</span>
+                </button>
+            </div>
+
+
+            <!-- Валюта 5 -->
+            <div class="product-card highlight">
+                <div class="product-badge">АКЦИЯ</div>
+                <div class="product-header">
+                    <h4 class="product-title">Новогодний Пакет</h4>
+                    <div class="product-price">
+                        <span class="price-amount">1089 ₽</span>
+                        <span class="price-period">на сервер</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <i class="fas fa-crown"></i>
+                    <span>Стань королем сервера!</span>
+                </div>
+                <ul class="product-features">
+                    <li><i class="fas fa-check"></i> CERBERUS навсегда</li>
+                    <li><i class="fas fa-check"></i> Кастом титул навсегда</li>
+                    <li><i class="fas fa-check"></i> 3 кит кейса в подарок</li>
+                    <li><i class="fas fa-check"></i> 149 фантиков</li>
+                    <li><i class="fas fa-check"></i> Экономия 25%</li>
+                </ul>
+                <button class="buy-btn custom-btn" data-product="CURRENCY_1M" data-price="1499">
+                    <i class="fas fa-crown"></i>
+                    <span>ВОСПОЛЬЗОВАТЬСЯ АКЦИЕЙ</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Легенда команд (только для привилегий) -->
+    <div class="commands-legend" id="commands-legend">
+        <h4><i class="fas fa-terminal"></i> Обозначения команд:</h4>
+        <div class="legend-grid">
+            <div class="legend-item">
+                <code>/kit</code>
+                <span>Личный набор предметов</span>
+            </div>
+            <div class="legend-item">
+                <code>/ec</code>
+                <span>Открыть Эндер-сундук</span>
+            </div>
+            <div class="legend-item">
+                <code>/ext</code>
+                <span>Потушить себя от огня</span>
+            </div>
+            <div class="legend-item">
+                <code>/feed</code>
+                <span>Восстановить сытость</span>
+            </div>
+            <div class="legend-item">
+                <code>/heal</code>
+                <span>Восстановить здоровье</span>
+            </div>
+            <div class="legend-item">
+                <code>/dispose</code>
+                <span>Уничтожить ненужные предметы</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Информация о платежной системе -->
+    <div class="payment-info">
+        <div class="payment-icon">
+            <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="payment-details">
+            <h4><i class="fas fa-lock"></i> Безопасная оплата через FunPay</h4>
+            <p>После покупки товар выдается в течение 30 минут. Укажите свой <strong>никнейм в Minecraft</strong> при оплате!</p>
+            <div class="payment-notice">
+                <i class="fas fa-info-circle"></i>
+                <span id="statusMessage">Выберите категорию и товар, затем нажмите "Купить"</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Подвал сайта -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">ATHENS<strong>MINE</strong></div>
+                    <p class="footer-slogan">Бокс Пвп, в котором начинается твоя Победа!</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#"><i class="fas fa-book"></i> Правила</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> Помощь</a>
+<a href="https://discord.gg/6RdhqRMAdK" target="_blank" class="discord-link">
+    <i class="fab fa-discord"></i> Discord
+</a>
+<a href="https://t.me/AthensMine" target="_blank" class="telegram-link">
+    <i class="fab fa-telegram"></i> Telegram
+</a>
+                </div>
+
+                <div class="footer-copyright">
+                    <p>© 2025 AthensMine. Все права защищены.</p>
+                    <p class="donate-credit">Сайт от <strong>cloneryy/nezavisimyy</strong></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

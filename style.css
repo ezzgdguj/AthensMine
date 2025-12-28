@@ -1,0 +1,1062 @@
+/* Основные стили для AthensMine Donate Website */
+:root {
+    --primary: #2a2d43;
+    --secondary: #3a3f5d;
+    --accent: #6c63ff;
+    --accent-light: #8a84ff;
+    --success: #4CAF50;
+    --warning: #FF9800;
+    --danger: #f44336;
+    --gold: #ffd700;
+    --light: #f8f9fa;
+    --dark: #1a1c2b;
+    --gray: #6c757d;
+    --border: #e0e0e0;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-gold: 0 4px 15px rgba(255, 215, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Шапка сервера */
+.server-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 12px 24px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--accent);
+}
+
+.server-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.status-indicator.online {
+    background-color: var(--success);
+    box-shadow: 0 0 8px var(--success);
+}
+
+.status-text {
+    font-size: 15px;
+    color: var(--gray);
+}
+
+.status-text strong {
+    color: var(--dark);
+    font-weight: 700;
+}
+
+.server-ip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f8f9fa;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.server-ip i {
+    color: var(--accent);
+}
+
+.server-ip code {
+    font-family: 'Consolas', monospace;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.copy-btn {
+    background: transparent;
+    border: none;
+    color: var(--accent);
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.copy-btn:hover {
+    background: rgba(108, 99, 255, 0.1);
+}
+
+/* Герой-секция */
+.hero-section {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(108, 99, 255, 0.1) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.server-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.title-part {
+    color: var(--dark);
+}
+
+.title-accent {
+    color: var(--accent);
+    text-shadow: 0 2px 4px rgba(108, 99, 255, 0.2);
+}
+
+.version-tag {
+    background: var(--accent);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.hero-description h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--dark);
+}
+
+.hero-description p {
+    font-size: 17px;
+    color: var(--gray);
+    margin-bottom: 28px;
+    max-width: 800px;
+    line-height: 1.7;
+}
+
+.stats-grid {
+    display: flex;
+    gap: 32px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Навигация по категориям */
+.categories-nav {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--dark);
+    cursor: pointer;
+    transition: all 0.3s;
+    flex: 1;
+    min-width: 160px;
+    justify-content: center;
+}
+
+.category-btn i {
+    font-size: 18px;
+    color: var(--accent);
+}
+
+.category-btn:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.category-btn.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.category-btn.active i {
+    color: white;
+}
+
+/* Секция товаров */
+.products-section {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 32px;
+    box-shadow: var(--shadow);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.section-header h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.section-header h3 i {
+    color: var(--accent);
+}
+
+.section-subtitle {
+    font-size: 17px;
+    color: var(--gray);
+}
+
+/* Сетка товаров */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.product-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-light);
+}
+
+.product-card.featured {
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 0 1px rgba(108, 99, 255, 0.1);
+}
+
+.product-card.highlight {
+    border: 2px solid var(--gold);
+    background: linear-gradient(135deg, #ffffff 0%, #fff9e6 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card.highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+}
+
+.product-badge {
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    background: var(--accent);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+}
+
+.product-card.highlight .product-badge {
+    background: linear-gradient(90deg, #ff8c00, #ff6b00);
+}
+
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.product-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.product-price {
+    text-align: right;
+}
+
+.price-amount {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+}
+
+.product-card.highlight .price-amount {
+    color: #ff6b00;
+}
+
+.price-period {
+    display: block;
+    font-size: 13px;
+    color: var(--gray);
+    margin-top: 4px;
+}
+
+.product-description {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    padding: 12px;
+    background: rgba(108, 99, 255, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid var(--accent);
+}
+
+.product-card.highlight .product-description {
+    background: rgba(255, 107, 0, 0.05);
+    border-left-color: #ff6b00;
+}
+
+.product-description i {
+    font-size: 18px;
+    color: var(--accent);
+}
+
+.product-card.highlight .product-description i {
+    color: #ff6b00;
+}
+
+.product-description span {
+    font-size: 15px;
+    color: var(--gray);
+    font-weight: 500;
+}
+
+.product-features {
+    list-style: none;
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+.product-features li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+}
+
+.product-features i {
+    color: var(--success);
+    font-size: 14px;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.highlight-text {
+    color: #ff6b00;
+    font-weight: 700;
+    background: linear-gradient(90deg, #ff6b00, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Кнопка покупки */
+.buy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.buy-btn:hover {
+    background: var(--accent-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(108, 99, 255, 0.25);
+}
+
+.buy-btn i {
+    font-size: 18px;
+}
+
+.custom-btn {
+    background: linear-gradient(90deg, #ff8c00, #ff6b00);
+    color: white;
+}
+
+.custom-btn:hover {
+    background: linear-gradient(90deg, #ff6b00, #ff8c00);
+    box-shadow: 0 6px 15px rgba(255, 107, 0, 0.3);
+}
+
+/* Легенда команд */
+.commands-legend {
+    background: #f8f9ff;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 40px 0 30px;
+    border: 1px solid rgba(108, 99, 255, 0.2);
+}
+
+.commands-legend h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.commands-legend h4 i {
+    color: var(--accent);
+}
+
+.legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+}
+
+.legend-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+    border-color: var(--accent-light);
+}
+
+.legend-item code {
+    background: var(--accent);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-family: 'Consolas', monospace;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 70px;
+    text-align: center;
+}
+
+.legend-item span {
+    color: var(--gray);
+    font-size: 14px;
+    flex-grow: 1;
+}
+
+/* Информация о платежах */
+.payment-info {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: #f8f9ff;
+    border-radius: 12px;
+    padding: 24px;
+    border-left: 4px solid var(--accent);
+}
+
+.payment-icon {
+    font-size: 48px;
+    color: var(--accent);
+}
+
+.payment-details h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.payment-details h4 i {
+    color: var(--accent);
+}
+
+.payment-details p {
+    color: var(--gray);
+    margin-bottom: 16px;
+    line-height: 1.7;
+}
+
+.payment-notice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: rgba(108, 99, 255, 0.08);
+    border-radius: 8px;
+    border: 1px solid rgba(108, 99, 255, 0.2);
+}
+
+.payment-notice i {
+    color: var(--accent);
+    font-size: 18px;
+}
+
+#statusMessage {
+    font-weight: 500;
+    color: var(--dark);
+}
+
+/* Подвал сайта */
+.site-footer {
+    background: var(--dark);
+    color: white;
+    border-radius: 16px;
+    padding: 32px;
+    margin-top: 32px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-brand {
+    margin-bottom: 24px;
+}
+
+.footer-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.footer-logo strong {
+    color: var(--accent-light);
+}
+
+.footer-slogan {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+}
+
+.footer-links {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+.footer-links i {
+    font-size: 18px;
+}
+
+.footer-copyright {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.footer-copyright p {
+    margin-bottom: 6px;
+}
+
+.donate-credit {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.donate-credit strong {
+    color: var(--accent-light);
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .categories-nav {
+        justify-content: center;
+    }
+    
+    .category-btn {
+        min-width: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    .server-header {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+    
+    .stats-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero-description h2 {
+        font-size: 24px;
+    }
+    
+    .server-title {
+        font-size: 36px;
+    }
+    
+    .section-header h3 {
+        font-size: 24px;
+    }
+    
+    .payment-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-links {
+        gap: 20px;
+    }
+    
+    .legend-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .legend-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+    
+    .legend-item code {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .hero-section, .products-section {
+        padding: 24px 16px;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .category-btn {
+        min-width: 100%;
+    }
+    
+    .server-title {
+        font-size: 28px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+    
+    .product-description {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+    
+    .price-amount {
+        font-size: 28px;
+    }
+    
+    .product-title {
+        font-size: 20px;
+    }
+
+    /* Специальные стили для CUSTOM доната */
+.custom-badge {
+    background: linear-gradient(90deg, #ff6b00, #ff8c00, #ffd700, #ff8c00, #ff6b00);
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+    color: white;
+    font-weight: 800;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    top: -12px;
+    right: 10px;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.custom-description {
+    background: linear-gradient(90deg, rgba(255, 107, 0, 0.1), rgba(255, 140, 0, 0.1));
+    border-left: 3px solid #ff6b00;
+}
+
+.custom-description i {
+    color: #ff6b00;
+    font-size: 20px;
+}
+
+.custom-description span {
+    color: #ff6b00;
+    font-weight: 600;
+}
+
+.custom-feature {
+    background: linear-gradient(90deg, rgba(255, 107, 0, 0.1), rgba(255, 140, 0, 0.05));
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin: 5px 0;
+    border-left: 3px solid #ffd700;
+}
+
+.custom-feature i {
+    color: #ffd700;
+    font-size: 16px;
+}
+
+.custom-feature span {
+    color: #ff6b00;
+    font-weight: 700;
+}
+
+.product-card.highlight {
+    border: 2px solid #ffd700;
+    background: linear-gradient(135deg, #fffef7 0%, #fff9e6 100%);
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card.highlight::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.product-card.highlight .product-title {
+    background: linear-gradient(90deg, #ff6b00, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.product-card.highlight .price-amount {
+    background: linear-gradient(90deg, #ff6b00, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 36px;
+}
+
+.custom-btn {
+    background: linear-gradient(90deg, #ff6b00, #ff8c00, #ffd700);
+    background-size: 200% 100%;
+    animation: gradient 3s infinite;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    padding: 18px;
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.custom-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 107, 0, 0.4);
+}
+
+.custom-btn i {
+    font-size: 20px;
+}
+
+/* Стили для категорий */
+.category-content {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.section-category-icon {
+    margin-right: 10px;
+    color: var(--accent);
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .categories-nav {
+        overflow-x: auto;
+        padding-bottom: 10px;
+        justify-content: flex-start;
+    }
+    
+    .category-btn {
+        min-width: 140px;
+        white-space: nowrap;
+    }
+}
+
+/* Стили для Discord кнопки */
+.discord-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.discord-link:hover {
+    color: #7289da !important;
+    transform: translateY(-2px);
+}
+
+.discord-link:hover i {
+    animation: discord-shake 0.5s ease;
+}
+
+@keyframes discord-shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Стили для Telegram кнопки */
+.telegram-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.telegram-link:hover {
+    color: #0088cc !important;
+    transform: translateY(-2px);
+}
+
+.telegram-link:hover i {
+    animation: telegram-pulse 0.8s ease infinite;
+}
+
+@keyframes telegram-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Эффект при нажатии на соц. кнопки */
+.footer-links a:active {
+    transform: scale(0.95);
+}
+
+/* ===== ИЗУМРУДНАЯ ТЕМА ДЛЯ SANTA ===== */
+.product-card.highlight {
+    border: 2px solid #10b981;
+    background: linear-gradient(135deg, #ffffff 0%, #f0fdf9 100%);
+}
+
+.product-card.highlight .product-badge {
+    background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.product-card.highlight .product-title {
+    color: #059669;
+}
+
+.product-card.highlight .price-amount {
+    color: #10b981;
+}
+
+.product-card.highlight .product-description {
+    background: rgba(16, 185, 129, 0.05);
+    border-left-color: #10b981;
+}
+
+.product-card.highlight .product-description i,
+.product-card.highlight .product-description span {
+    color: #10b981;
+}
+
+.custom-feature {
+    background: rgba(16, 185, 129, 0.08);
+    border-left-color: #34d399;
+}
+
+.custom-feature i {
+    color: #34d399;
+}
+
+.custom-feature span {
+    color: #059669;
+}
+
+.custom-btn {
+    background: linear-gradient(90deg, #059669, #10b981);
+}
+
+.custom-btn:hover {
+    background: linear-gradient(90deg, #10b981, #059669);
+    box-shadow: 0 6px 15px rgba(16, 185, 129, 0.3);
+}
+}
