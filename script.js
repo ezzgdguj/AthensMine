@@ -184,6 +184,7 @@ const funPayLinks = {
     'CUSTOM': `${funPayBaseUrl}/lots/offer?id=35088216`,
     'SANTA': `${funPayBaseUrl}/lots/offer?id=60938628`,
     'GRINCH': `${funPayBaseUrl}/lots/offer?id=35087453`,
+    'BRAWLER': `${funPayBaseUrl}/lots/offer?id=35087453`,
     'CHRISTMAS': `${funPayBaseUrl}/lots/offer?id=60938761`,
     'CASE_START': `${funPayBaseUrl}/lots/offer?id=35089578`,
     'CASE_PREMIUM': `${funPayBaseUrl}/lots/offer?id=35089504`,
