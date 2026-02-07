@@ -127,6 +127,7 @@ const funPayLinks = {
     'SANTA': `${funPayBaseUrl}/lots/santa`,
     'GRINCH': `${funPayBaseUrl}/lots/grinch`,
     'CHRISTMAS': `${funPayBaseUrl}/lots/christmas`,
+    'BRAWLER': `${funPayBaseUrl}/lots/brawler`,
     
     // Кейсы
     'CASE_START': `${funPayBaseUrl}/lots/case_start`,
@@ -336,4 +337,5 @@ telegramLinks.forEach(link => {
     console.log('AthensMine Donate Website initialized!');
     setTimeout(updateOnlineStats, 1000);
 });
+
 
